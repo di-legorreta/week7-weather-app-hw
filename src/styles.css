@@ -105,6 +105,7 @@ h1 {
 }
 
 .weather-app-temp-unit {
+   font-family: "Barlow Condensed", "DM Sans", sans-serif;
    position: relative;
    font-size: 24px;
    top: -44px;
