@@ -18,7 +18,7 @@ function formatDate(date) {
    return `${day} ${hours}:${minutes}`;
 }
 
-const timeElInit = document.querySelector("#day-time");
+const timeElInit = document.querySelector("#time");
 if (timeElInit) timeElInit.textContent = formatDate(new Date());
 
 function refreshWeather(response) {
@@ -29,22 +29,22 @@ function refreshWeather(response) {
       return;
    }
 
-   const cityEl = document.querySelector("#city");
-   const tempEl = document.querySelector("#fake-temp");
-   const descEl = document.querySelector("#condition-description");
+   const cityEl = document.querySelector("#weather-app-city");
+   const tempEl = document.querySelector("#weather-app-temp-value");
+   const descEl = document.querySelector("#description");
    const humidEl = document.querySelector("#humidity");
-   const windEl = document.querySelector("#wind");
-   const timeEl = document.querySelector("#day-time");
-   const iconWrap = document.querySelector("#icon");
+   const windEl = document.querySelector("#speed");
+   const timeEl = document.querySelector("#time");
+   const iconWrap = document.querySelector("#weather-app-icon");
 
    if (cityEl && d.city) cityEl.innerHTML = d.city;
-   if (tempEl) tempEl.innerHTML = Math.round(d.temperature.current) + "°C";
+   if (tempEl) tempEl.textContent = String(Math.round(d.temperature.current));
    if (descEl) descEl.innerHTML = d.condition.description;
    if (humidEl) humidEl.innerHTML = Math.round(d.temperature.humidity) + "%";
    if (windEl) windEl.innerHTML = Math.round(d.wind.speed) + "km/h";
 
    if (timeEl && d.time) {
-      const ms = d.time < 1e12 ? d.time * 1000 : d.time; // seconds → ms
+      const ms = d.time < 1e12 ? d.time * 1000 : d.time;
       timeEl.innerHTML = formatDate(new Date(ms));
    }
 
@@ -81,7 +81,7 @@ function handleSearchSubmit(event) {
       return;
    }
 
-   const cityEl = document.querySelector("#city");
+   const cityEl = document.querySelector("#weather-app-city");
    if (cityEl) cityEl.textContent = city;
 
    searchCity(city);
@@ -90,4 +90,5 @@ function handleSearchSubmit(event) {
 document
    .querySelector("#city-input")
    .addEventListener("submit", handleSearchSubmit);
+
 searchCity("Paris");
