@@ -18,9 +18,6 @@ function formatDate(date) {
    return `${day} ${hours}:${minutes}`;
 }
 
-const timeElInit = document.querySelector("#time");
-if (timeElInit) timeElInit.textContent = formatDate(new Date());
-
 function refreshWeather(response) {
    const d = response.data;
 
