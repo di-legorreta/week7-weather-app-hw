@@ -77,8 +77,6 @@ function handleSearchSubmit(event) {
       alert("Please type a city");
       return;
    }
-   const cityEl = document.querySelector("#weather-app-city");
-   if (cityEl) cityEl.textContent = city;
    searchCity(city);
 }
 
