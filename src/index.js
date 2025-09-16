@@ -34,15 +34,15 @@ function refreshWeather(response) {
    const timeEl = document.querySelector("#time");
    const iconWrap = document.querySelector("#weather-app-icon");
 
-   if (cityEl && d.city) cityEl.innerHTML = d.city;
+   if (cityEl && d.city) cityEl.textContent = d.city;
    if (tempEl) tempEl.textContent = String(Math.round(d.temperature.current));
-   if (descEl) descEl.innerHTML = d.condition.description;
-   if (humidEl) humidEl.innerHTML = Math.round(d.temperature.humidity) + "%";
-   if (windEl) windEl.innerHTML = Math.round(d.wind.speed) + "km/h";
+   if (descEl) descEl.textContent = d.condition.description;
+   if (humidEl) humidEl.textContent = Math.round(d.temperature.humidity) + "%";
+   if (windEl) windEl.textContent = Math.round(d.wind.speed) + "km/h";
 
-   if (timeEl && d.time) {
-      const ms = d.time < 1e12 ? d.time * 1000 : d.time;
-      timeEl.innerHTML = formatDate(new Date(ms));
+   if (timeEl && typeof d.time === "number") {
+      const ms = d.time * 1000;
+      timeEl.textContent = formatDate(new Date(ms));
    }
 
    if (iconWrap && d.condition && d.condition.icon_url) {
@@ -77,15 +77,12 @@ function handleSearchSubmit(event) {
       alert("Please type a city");
       return;
    }
-
    const cityEl = document.querySelector("#weather-app-city");
    if (cityEl) cityEl.textContent = city;
-
    searchCity(city);
 }
 
 document
    .querySelector("#city-input")
    .addEventListener("submit", handleSearchSubmit);
-
 searchCity("Paris");
