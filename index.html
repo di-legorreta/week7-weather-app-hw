@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2
+?family=DM+Sans:wght@400;500
+&family=Barlow+Condensed:wght@700
+&family=League+Spartan:wght@700
+&display=swap"
+         rel="stylesheet"
+      />
+
+      <link
+         rel="stylesheet"
+         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      />
+
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <link rel="stylesheet" href="src/styles.css" />
+      <title>My weather application</title>
+   </head>
+   <body>
+      <div class="container glass">
+         <header class="logo">
+            <a href="https://www.shecodes.io/" target="_blank"
+               ><img
+                  src="images/logo-shecodes.png"
+                  alt="She Codes logo"
+                  width="150"
+            /></a>
+         </header>
+         <section>
+            <form class="search-form" action="#" method="get" id="city-input">
+               <input
+                  type="search"
+                  name="city"
+                  aria-lable="Search city"
+                  placeholder="Enter a city.."
+                  autocomplete="off"
+                  id="search-input"
+               />
+               <input type="submit" value="Search" id="search-button" />
+            </form>
+            <br />
+         </section>
+         <main>
+            <div class="current-weather">
+               <div class="info">
+                  <h1 id="city">Paris</h1>
+                  <p>
+                     <span id="day-time">Saturday 15:32</span>,
+                     <span id="condition-description">moderate rain</span>
+                     <br />
+                     <span>Humidity:</span>
+                     <span id="humidity"><strong>87%</strong></span
+                     >,
+                     <span>Wind:</span>
+                     <span id="wind"><strong>7.2km/h</strong></span>
+                  </p>
+               </div>
+               <div class="temp">
+                  <span class="material-symbols-outlined sun" id="icon">
+                     sunny
+                  </span>
+                  <span id="fake-temp">14°C</span>
+               </div>
+            </div>
+         </main>
+         <footer>
+            <p class="credits">
+               This project was coded by
+               <a href="https://github.com/di-legorreta" target="_blank"
+                  >Diana Legorreta</a
+               >
+               and is
+               <a
+                  href="https://github.com/di-legorreta/weather-app"
+                  target="_blank"
+                  >on GitHub</a
+               >
+               and
+               <a href="https://di-weather-app.netlify.app/" target="_blank"
+                  >hosted on Netlify</a
+               >
+            </p>
+         </footer>
+      </div>
+      <script src="src/index.js"></script>
+   </body>
+</html>
