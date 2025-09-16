@@ -2,7 +2,9 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>My weather application</title>
+
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
@@ -14,81 +16,88 @@
          rel="stylesheet"
       />
 
-      <link
-         rel="stylesheet"
-         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      />
-
-      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       <link rel="stylesheet" href="src/styles.css" />
-      <title>My weather application</title>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
    </head>
+
    <body>
       <div class="container glass">
          <header class="logo">
-            <a href="https://www.shecodes.io/" target="_blank"
-               ><img
+            <a href="https://www.shecodes.io/" target="_blank" rel="noopener">
+               <img
                   src="images/logo-shecodes.png"
                   alt="She Codes logo"
                   width="150"
-            /></a>
+               />
+            </a>
          </header>
+
          <section>
-            <form class="search-form" action="#" method="get" id="city-input">
+            <form class="search-form" id="city-input" action="#" method="get">
                <input
+                  id="search-input"
                   type="search"
                   name="city"
-                  aria-lable="Search city"
                   placeholder="Enter a city.."
                   autocomplete="off"
-                  id="search-input"
+                  aria-label="Search city"
                />
-               <input type="submit" value="Search" id="search-button" />
+               <input id="search-button" type="submit" value="Search" />
             </form>
             <br />
          </section>
+
          <main>
-            <div class="current-weather">
-               <div class="info">
-                  <h1 id="city">Paris</h1>
-                  <p>
-                     <span id="day-time">Saturday 15:32</span>,
-                     <span id="condition-description">moderate rain</span>
+            <div class="weather-app-data">
+               <div>
+                  <h1 class="weather-app-city" id="weather-app-city"></h1>
+                  <p class="weather-app-details">
+                     <span id="time"></span>
+                     <span id="description">, </span>
                      <br />
-                     <span>Humidity:</span>
-                     <span id="humidity"><strong>87%</strong></span
-                     >,
-                     <span>Wind:</span>
-                     <span id="wind"><strong></strong></span>
+                     Humidity: <strong id="humidity"></strong>, Wind:
+                     <strong id="speed"></strong>
                   </p>
                </div>
-               <div class="temp">
-                  <span class="material-symbols-outlined sun" id="icon">
-                     sunny
-                  </span>
-                  <span id="fake-temp">14°C</span>
+
+               <div class="weather-app-temp-container">
+                  <div class="weather-app-icon" id="weather-app-icon"></div>
+                  <div
+                     class="weather-app-temp-value"
+                     id="weather-app-temp-value"
+                  ></div>
+                  <div class="weather-app-temp-unit">°C</div>
                </div>
             </div>
          </main>
+
          <footer>
             <p class="credits">
                Coded by
-               <a href="https://github.com/di-legorreta" target="_blank"
+               <a
+                  href="https://github.com/di-legorreta"
+                  target="_blank"
+                  rel="noopener"
                   >Diana Legorreta</a
                >
                open-sourced on
                <a
                   href="https://github.com/di-legorreta/week7-weather-app-hw"
                   target="_blank"
+                  rel="noopener"
                   >GitHub</a
                >
-               and
-               <a href="https://di-weather-app.netlify.app/" target="_blank"
-                  >hosted on Cloudfare</a
-               >
+               and hosted on
+               <a
+                  href="https://week7-weather-app-hw.pages.dev/"
+                  target="_blank"
+                  rel="noopener"
+                  >Cloudflare Pages</a
+               >.
             </p>
          </footer>
       </div>
+
       <script src="src/index.js"></script>
    </body>
 </html>

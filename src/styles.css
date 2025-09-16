@@ -1,40 +1,21 @@
 body {
-   background: #eeaeca;
-   background: radial-gradient(
-      circle,
-      rgba(238, 174, 202, 1) 0%,
-      rgba(148, 187, 233, 1) 100%
-   );
-   color: white;
-   font-family: monaco, monospace;
-   transform: all 0.3 ease;
-   padding: 20px;
-   font-family: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial,
-      sans-serif;
-   font-weight: 400;
+   background: url(../images/sunset.jpg) center / cover no-repeat fixed;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
 }
 
-h1,
-h2,
-h3 {
+h1 {
    font-family: "Barlow Condensed", "DM Sans", sans-serif;
-   font-size: 48px;
-   font: 700;
+   font-size: 60px;
+   font-weight: 700;
    letter-spacing: 2px;
    margin: 0;
-}
-
-section form {
-   display: flex;
-   gap: 10px;
-   margin-top: 20px;
-   margin-bottom: 30px;
 }
 
 .container {
    background-color: transparent;
    max-width: 700px;
-   margin: 20px auto;
+   margin: 100px auto;
    padding: 40px;
    border-radius: 20px;
    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -55,13 +36,6 @@ section form {
       inset 0 -1px 0 rgba(255, 255, 255, 0.18);
 }
 
-.temp {
-   font-family: "League Spartan", "Barlow Condensed", sans-serif;
-   font-weight: 700;
-   font-size: clamp(48px, 9vw, 96px);
-   line-height: 1;
-}
-
 .logo {
    padding: 18px;
 }
@@ -72,7 +46,7 @@ section form {
    align-items: center;
    margin: 12px 0;
    padding-bottom: 30px;
-   border-bottom: 1px solid #f58de7;
+   border-bottom: 1px solid #75586f;
 }
 
 .search-form input[type="search"] {
@@ -87,42 +61,73 @@ section form {
    padding: 18px 32px;
    border: 0;
    border-radius: 12px;
-   background: #f58de7;
+   background: #523c4e;
    color: white;
    font-weight: 600;
    font-size: 16px;
 }
-
 .search-form input[type="submit"]:hover {
-   background: #f364bf;
+   background: #75586f;
 }
 
-.current-weather {
+.weather-app-data {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   gap: 24px;
    padding-bottom: 30px;
-   border-bottom: 1px solid #f58de7;
+   border-bottom: 1px solid #75586f;
 }
 
-.current-weather .info {
-   flex: 1;
+.weather-app-data > div:first-child {
+   flex: 1 1 auto;
    min-width: 0;
 }
 
-.current-weather .temp {
-   font-size: 72px;
-   font-weight: 800;
+.weather-app-details {
+   margin: 6px 0 0;
+   line-height: 1.35;
+}
+
+.weather-app-temp-container {
+   display: flex;
+   align-items: baseline;
+   gap: 12px;
    white-space: nowrap;
 }
 
+.weather-app-temp-value {
+   font-family: "League Spartan", "Barlow Condensed", sans-serif;
+   font-weight: 700;
+   font-size: clamp(48px, 9vw, 96px);
+   line-height: 0.82;
+   letter-spacing: -0.5px;
+}
+
+.weather-app-temp-unit {
+   position: relative;
+   font-size: 24px;
+   top: -44px;
+   font-weight: 700;
+   margin-left: 6px;
+}
+
+.weather-app-icon {
+   display: inline-flex;
+   align-items: center;
+   line-height: 1;
+   font-size: 52px;
+}
+
+.weather-app-icon img {
+   width: 72px;
+   height: 72px;
+   display: block;
+}
+
 .credits {
+   font-size: 13px;
    text-align: center;
    padding: 20px;
    color: white;
-}
-
-.sun {
-   font-size: 48px;
-   font-weight: bold;
 }
